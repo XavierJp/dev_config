@@ -5,11 +5,7 @@ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install
 mv oh-my-zsh/.zshrc ~/
 
 # powerline
-wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
-wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
-mv PowerlineSymbols.otf ~/.fonts/
-fc-cache -vf ~/.fonts/
-mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+sudo pip install powerline-status
 
 # vim
 mv vim/.vim/ ~/
