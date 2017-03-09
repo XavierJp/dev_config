@@ -3,7 +3,7 @@ execute pathogen#infect()
 " *** undo history ***
 set undofile
 
-set undodir=/home/xjouppe/.vimundo/
+set undodir=$HOME/.vimundo/
 
 
 " autoread file realtime
@@ -138,5 +138,4 @@ let g:NERDTreeDirArrowCollapsible = '-'
 "    <M-n> : Jump to next closed pair (g:AutoPairsShortcutJump)
 "    <M-b> : BackInsert (g:AutoPairsShortcutBackInsert)
 
-let g:AutoPairsFlyMode = 1
-let g:AutoPairsShortcutBackInsert = '<C-d>'
+let g:AutoPairsFlyMode = 0
