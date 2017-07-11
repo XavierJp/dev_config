@@ -1,4 +1,3 @@
-
 # *********
 # ** GIT **
 # *********
@@ -90,6 +89,15 @@ git clone --depth=1 https://github.com/scrooloose/syntastic.git ./syntastic
 
 # multiple cursors
 git clone https://github.com/terryma/vim-multiple-cursors.git ./vim-multiple-cursors
+
+# coloured brackets
+git clone https://github.com/kien/rainbow_parentheses.vim
+
+# python pep8 (syntastic) syntax checker
+git clone https://github.com/nvie/vim-flake8.git
+
+# completion engine
+git clone https://github.com/Valloric/YouCompleteMe.git
 
 #  VIMRC
 cd ~
