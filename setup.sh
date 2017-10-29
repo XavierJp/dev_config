@@ -47,42 +47,30 @@ cp ./conf_files/.tmux.conf .tmux.conf
 # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 # nvm install 4.5
 
-# *********
-# ** VIM **
-# *********
+# **********
+# ** NVIM **
+# **********
 
 # install vim
-sudo apt-get install vim
-
-cd ~
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    sudo apt-get install neovim
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install neovim
 
 # create directories
-mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/colors ~/.vimundo
+mkdir -p ~/.config.vim/autoload ~/.vim/bundle ~/.vim/colors ~/.vimundo
 
-# install pathogen
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+# vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# install plugins
-cd .vim/bundle
+# copy init.vim
+cp ./conf_file/init.vim ~/.config/init.vim
 
-# CTRLP fuzzy finder
-git clone https://github.com/kien/ctrlp.vim.git ./ctrlp.vim
+# ready to go !!!
 
-# NERDTREE (facultative)
-# useful to open folder
-# git clone https://github.com/scrooloose/nerdtree.git
+# eslint ?
 
-# auto pair (parenthesis completion)
-git clone https://github.com/jiangmiao/auto-pairs.git ./auto-pairs
-
-# AIRLINE bar
-git clone https://github.com/vim-airline/vim-airline ./vim-airline
-
-# vim airline themes
-git clone https://github.com/vim-airline/vim-airline-themes ./vim-airline-themes
-
-# indent line
-git clone https://github.com/Yggdroot/indentLine.git ./indentLine
 
 # syntastic (need ESLINT)
 git clone --depth=1 https://github.com/scrooloose/syntastic.git ./syntastic
